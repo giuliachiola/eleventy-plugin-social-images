@@ -104,8 +104,10 @@ const dataPath = fs.realpathSync(dataFile);
   for (const post of pages) {
     // Update the H1 element with the post title
     await page.evaluate((post) => {
-      const title = document.querySelector("h1");
-      title.innerHTML = post.title;
+      post.selectors.forEach(el => {
+        const DOMelement = document.querySelector(el.selector);
+        DOMelement.innerHTML = el.content;
+      })
     }, post);
 
     console.log(`Image: ${post.imgName}.png`);
