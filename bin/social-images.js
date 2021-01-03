@@ -111,6 +111,7 @@ const dataPath = fs.realpathSync(dataFile);
     }, post);
 
     await page.evaluate((post) => {
+      console.log('bodyClass', post.bodyClass)
       document.body.classList.add(post.bodyClass)
     }, post);
 
