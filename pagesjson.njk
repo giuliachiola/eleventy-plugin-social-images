@@ -16,6 +16,7 @@ eleventyExcludeFromCollections: true
                   "content":"{% if pages.data.subtitle %}{{ pages.data.subtitle | addNbsp | safe }}{% else %}Insert here your subtitle{% endif %}"
             }
       ],
+      "bodyClass": "t-palette--4",
       "imgName":"{% if pages.data.title %}{{ pages.data.title | slug }}{% else %}home{% endif %}"
 	}{% if loop.last == false %},{% endif -%}
 {% endfor %}
