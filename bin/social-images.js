@@ -110,11 +110,6 @@ const dataPath = fs.realpathSync(dataFile);
       })
     }, post);
 
-    await page.evaluate((post) => {
-      console.log('bodyClass', post.bodyClass)
-      document.body.classList.add(post.bodyClass)
-    }, post);
-
     console.log(`Image: ${post.imgName}.png`);
 
     // Save a screenshot to [outputDir]/[previewDir]/[imgName].png
